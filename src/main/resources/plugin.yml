@@ -1,0 +1,35 @@
+name: xiaolehuskhomesmenu
+version: 1.1.0
+main: com.xiaole.tpamenu.TpaMenuPlugin
+api-version: '1.21'
+folia-supported: true
+authors:
+  - xiaole
+softdepend:
+  - HuskHomes
+  - SkinsRestorer
+commands:
+  tpamenu:
+    description: 打开传送请求玩家菜单。
+    usage: /tpamenu [reload]
+    aliases:
+      - xiaolehuskhomesmenu
+      - xiaoletpamenu
+      - tpmenu
+      - tpagui
+  warpmenu:
+    description: 打开 HuskHomes 地标传送菜单。
+    usage: /warpmenu [reload]
+    aliases:
+      - warpui
+      - warpgui
+permissions:
+  tpamenu.open:
+    description: 允许打开传送请求菜单。
+    default: true
+  tpamenu.reload:
+    description: 允许重载传送请求和地标菜单配置。
+    default: op
+  tpamenu.warp.open:
+    description: 允许打开地标传送菜单。
+    default: true

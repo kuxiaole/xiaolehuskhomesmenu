@@ -1,0 +1,116 @@
+menu:
+  title: "&0传送请求菜单 &8({page}/{pages})"
+  size: 54
+  player-slots: 45
+  show-self: false
+  close-after-request: true
+  tpa-command: "tpa {player}"
+  skin-fetch-timeout-millis: 1500
+  skin-cache-minutes: 15
+  skin-threads: 2
+
+items:
+  player:
+    name: "&a{player}"
+    lore:
+      - "&7点击发送传送请求"
+      - "&8由 HuskHomes 处理请求"
+  previous:
+    material: ARROW
+    name: "&e上一页"
+    lore:
+      - "&7当前: &f{page}&7/&f{pages}"
+  next:
+    material: ARROW
+    name: "&e下一页"
+    lore:
+      - "&7当前: &f{page}&7/&f{pages}"
+  refresh:
+    material: CLOCK
+    name: "&b刷新"
+  close:
+    material: BARRIER
+    name: "&c关闭"
+  info:
+    material: PAPER
+    name: "&f在线玩家: &a{count}"
+    lore:
+      - "&7第 &f{page}&7/&f{pages} &7页"
+  empty:
+    material: GRAY_DYE
+    name: "&7暂无可传送玩家"
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+
+# HuskHomes 官方 Warp 菜单。只读取地标并执行传送，不提供创建、删除或编辑功能。
+warp-menu:
+  title: "&0地标传送菜单 &8({page}/{pages})"
+  size: 54
+  warp-slots: 45
+  close-after-teleport: true
+  warp-command: "huskhomes:warp {warp}"
+  load-timeout-millis: 5000
+  no-description: "暂无描述"
+
+  items:
+    # 所有未单独配置的地标都会使用这个图标与描述样式。
+    # 可用变量: {warp}、{description}
+    warp:
+      material: ENDER_PEARL
+      name: "&a{warp}"
+      lore:
+        - "&7{description}"
+        - ""
+        - "&e点击传送"
+    previous:
+      material: ARROW
+      name: "&e上一页"
+      lore:
+        - "&7当前: &f{page}&7/&f{pages}"
+    next:
+      material: ARROW
+      name: "&e下一页"
+      lore:
+        - "&7当前: &f{page}&7/&f{pages}"
+    refresh:
+      material: CLOCK
+      name: "&b刷新地标"
+    close:
+      material: BARRIER
+      name: "&c关闭"
+    info:
+      material: MAP
+      name: "&f地标数量: &a{count}"
+      lore:
+        - "&7第 &f{page}&7/&f{pages} &7页"
+    empty:
+      material: GRAY_DYE
+      name: "&7暂无可用地标"
+    filler:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+
+  # 按 HuskHomes 中的地标名称单独覆盖图标、显示名和描述。
+  # 未填写的字段会继承上方 items.warp 的默认值；名称需与 Warp 名称完全一致。
+  warps: {}
+  # warps:
+  #   spawn:
+  #     material: GRASS_BLOCK
+  #     name: "&a服务器主城"
+  #     lore:
+  #       - "&7返回服务器主城"
+  #       - ""
+  #       - "&e点击传送"
+
+messages:
+  prefix: "&8[&a传送菜单&8] "
+  only-player: "&c只有玩家可以使用这个命令。"
+  no-permission: "&c你没有权限。"
+  reloaded: "&a配置已重载。"
+  huskhomes-missing: "&c未检测到 HuskHomes，无法发送传送请求。"
+  request-sent: "&a已向 &f{player} &a发送传送请求。"
+  opening: "&7正在加载传送请求菜单..."
+  warp-opening: "&7正在加载地标菜单..."
+  warp-load-failed: "&c地标加载失败，请稍后重试。"
+  warp-command-failed: "&c无法执行 HuskHomes 地标传送命令。"
