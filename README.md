@@ -3,6 +3,7 @@
 适用于 Folia 26.1.2 的 HuskHomes 箱子菜单插件：
 
 - `/tpamenu` 使用玩家头颅选择在线玩家并发送 TPA 请求。
+- `/tpamenu` 支持读取 HuskHomes 跨服在线玩家列表；开启 HuskHomes 跨服模式并正确配置同一集群后，会显示其他子服玩家。
 - `/warpmenu` 读取 HuskHomes 官方 Warp 数据，点击图标传送。
 - 两个菜单均支持自动分页、刷新、关闭和配置重载。
 
@@ -49,6 +50,8 @@ menu:
 ```
 
 这样冷却、请求处理、权限和安全检查都继续交给 HuskHomes 负责。
+
+跨服玩家列表来自 HuskHomes 4.10 的跨服同步数据。玩家物品支持 `{player}` 和 `{server}` 变量；如果 HuskHomes 未开启跨服模式或跨服代理/Redis 未配置，插件会自动退回只显示当前子服玩家。
 
 Warp 列表来自 HuskHomes 4.10 官方 API，点击后默认执行：
 

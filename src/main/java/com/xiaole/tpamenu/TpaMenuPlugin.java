@@ -8,6 +8,8 @@ import com.xiaole.tpamenu.listener.WarpMenuListener;
 import com.xiaole.tpamenu.menu.OnlinePlayerRegistry;
 import com.xiaole.tpamenu.menu.TpaMenuService;
 import com.xiaole.tpamenu.menu.WarpMenuService;
+import com.xiaole.tpamenu.player.GlobalPlayerProvider;
+import com.xiaole.tpamenu.player.GlobalPlayerProviderFactory;
 import com.xiaole.tpamenu.scheduler.SchedulerUtil;
 import com.xiaole.tpamenu.skin.SkinProvider;
 import com.xiaole.tpamenu.skin.SkinProviderFactory;
@@ -31,7 +33,8 @@ public final class TpaMenuPlugin extends JavaPlugin {
         reloadLocalSettings();
 
         skinProvider = SkinProviderFactory.create(this, settings);
-        onlinePlayers = new OnlinePlayerRegistry();
+        GlobalPlayerProvider globalPlayerProvider = GlobalPlayerProviderFactory.create(this);
+        onlinePlayers = new OnlinePlayerRegistry(globalPlayerProvider);
         menuService = new TpaMenuService(this, scheduler, onlinePlayers, skinProvider, settings);
         WarpProvider warpProvider = WarpProviderFactory.create(this);
         warpMenuService = new WarpMenuService(this, scheduler, warpProvider, settings);

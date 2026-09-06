@@ -211,7 +211,9 @@ public final class TpaMenuService {
     private ItemStack playerItem(PlayerEntry entry, SkinTexture texture, MenuSettings currentSettings) {
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) item.getItemMeta();
-        Placeholders placeholders = new Placeholders().set("player", entry.name());
+        Placeholders placeholders = new Placeholders()
+                .set("player", entry.name())
+                .set("server", entry.server());
         meta.displayName(currentSettings.text(currentSettings.playerItem().name(), placeholders));
         meta.lore(currentSettings.lore(currentSettings.playerItem().lore(), placeholders));
         applySkin(meta, entry, texture);

@@ -12,7 +12,7 @@ public final class SchedulerUtil {
     public SchedulerUtil(Plugin plugin) {
         this.plugin = plugin;
     }
-
+}
     public boolean isFolia() {
         return FOLIA;
     }
@@ -58,4 +58,5 @@ public final class SchedulerUtil {
             return false;
         }
     }
+
 }

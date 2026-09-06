@@ -8,12 +8,15 @@ menu:
   skin-fetch-timeout-millis: 1500
   skin-cache-minutes: 15
   skin-threads: 2
+  # HuskHomes 开启跨服模式后，菜单会自动读取全局在线玩家列表。
+  # 玩家物品支持变量: {player}、{server}
 
 items:
   player:
     name: "&a{player}"
     lore:
       - "&7点击发送传送请求"
+      - "&8服务器: &f{server}"
       - "&8由 HuskHomes 处理请求"
   previous:
     material: ARROW
